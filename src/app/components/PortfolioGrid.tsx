@@ -804,155 +804,8 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                     </motion.div>
                   )}
                 </motion.div>
-              </div>
-
-              {/* Column 2 */}
-              <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.6,
-                    delay: 0.2,
-                    ease: [0.43, 0.13, 0.23, 0.96]
-                  }}
-                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
-                  style={{ aspectRatio: '336/472' }}
-                  onMouseEnter={() => setHoveredId(2)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  <Link to={category === 'Product' ? '/packaging' : '/threecats'} className="block w-full h-full">
-                    <img
-                      src={images[2].src}
-                      alt={images[2].title}
-                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
-                    />
-                  </Link>
-                  {hoveredId === 2 && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
-                    >
-                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                        {category === 'Product' ? 'Packaging Designs' : 'ThreeCat'}
-                      </p>
-                    </motion.div>
-                  )}
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.6,
-                    delay: 0.25,
-                    ease: [0.43, 0.13, 0.23, 0.96]
-                  }}
-                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
-                  style={{ aspectRatio: '336/472' }}
-                  onMouseEnter={() => setHoveredId(3)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  <Link to={category === 'Product' ? '/fengfeng' : '/wushiland'} className="block w-full h-full">
-                    <img
-                      src={images[3].src}
-                      alt={images[3].title}
-                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
-                    />
-                  </Link>
-                  {hoveredId === 3 && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
-                    >
-                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                        {category === 'Product' ? 'Feng Feng' : 'Wushiland'}
-                      </p>
-                    </motion.div>
-                  )}
-                </motion.div>
-              </div>
-
-              {/* Column 3 */}
-              <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.6,
-                    delay: 0.3,
-                    ease: [0.43, 0.13, 0.23, 0.96]
-                  }}
-                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
-                  style={{ aspectRatio: '436/349' }}
-                  onMouseEnter={() => setHoveredId(4)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  <Link to={category === 'Product' ? '/gamblehouse' : '/sumei'} className="block w-full h-full">
-                    <img
-                      src={images[4].src}
-                      alt={images[4].title}
-                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
-                    />
-                  </Link>
-                  {hoveredId === 4 && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
-                    >
-                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                        {category === 'Product' ? 'Gamble House' : 'Sumei'}
-                      </p>
-                    </motion.div>
-                  )}
-                </motion.div>
-                {category !== 'Food' && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ 
-                      duration: 0.6,
-                      delay: 0.35,
-                      ease: [0.43, 0.13, 0.23, 0.96]
-                    }}
-                    className="relative overflow-hidden cursor-pointer group touch-manipulation"
-                    style={{ aspectRatio: '436/349' }}
-                    onMouseEnter={() => setHoveredId(5)}
-                    onMouseLeave={() => setHoveredId(null)}
-                  >
-                    <Link to={category === 'Product' ? '/ecommerce' : undefined} className="block w-full h-full">
-                      <img
-                        src={images[5].src}
-                        alt={images[5].title}
-                        className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
-                      />
-                    </Link>
-                    {hoveredId === 5 && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
-                      >
-                        <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                          {category === 'Product' ? 'E-commerce' : images[5].title}
-                        </p>
-                      </motion.div>
-                    )}
-                  </motion.div>
-                )}
-              </div>
-
-              {/* New Food Projects */}
-              {category === 'Food' && (
-                <div className="col-span-1 md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                  {/* Column 1 - landscape */}
-                  <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+                {category === 'Food' && (
+                  <>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9, y: 30 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1040,10 +893,80 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                         </motion.div>
                       )}
                     </motion.div>
-                  </div>
+                  </>
+                )}
+              </div>
 
-                  {/* Column 2 - portrait */}
-                  <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+              {/* Column 2 */}
+              <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6,
+                    delay: 0.2,
+                    ease: [0.43, 0.13, 0.23, 0.96]
+                  }}
+                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
+                  style={{ aspectRatio: '336/472' }}
+                  onMouseEnter={() => setHoveredId(2)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  <Link to={category === 'Product' ? '/packaging' : '/threecats'} className="block w-full h-full">
+                    <img
+                      src={images[2].src}
+                      alt={images[2].title}
+                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                    />
+                  </Link>
+                  {hoveredId === 2 && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
+                    >
+                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
+                        {category === 'Product' ? 'Packaging Designs' : 'ThreeCat'}
+                      </p>
+                    </motion.div>
+                  )}
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6,
+                    delay: 0.25,
+                    ease: [0.43, 0.13, 0.23, 0.96]
+                  }}
+                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
+                  style={{ aspectRatio: '336/472' }}
+                  onMouseEnter={() => setHoveredId(3)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  <Link to={category === 'Product' ? '/fengfeng' : '/wushiland'} className="block w-full h-full">
+                    <img
+                      src={images[3].src}
+                      alt={images[3].title}
+                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                    />
+                  </Link>
+                  {hoveredId === 3 && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
+                    >
+                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
+                        {category === 'Product' ? 'Feng Feng' : 'Wushiland'}
+                      </p>
+                    </motion.div>
+                  )}
+                </motion.div>
+                {category === 'Food' && (
+                  <>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9, y: 30 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1086,7 +1009,7 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                         <img
                           src={imgPicamas1}
                           alt="Picamas"
-                          className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                          className="w-full h-full object-cover md:transition-transform md:group-hover:scale-105"
                         />
                       </Link>
                       {hoveredId === 14 && (
@@ -1102,10 +1025,82 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                         </motion.div>
                       )}
                     </motion.div>
-                  </div>
+                  </>
+                )}
+              </div>
 
-                  {/* Column 3 - landscape */}
-                  <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+              {/* Column 3 */}
+              <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6,
+                    delay: 0.3,
+                    ease: [0.43, 0.13, 0.23, 0.96]
+                  }}
+                  className="relative overflow-hidden cursor-pointer group touch-manipulation"
+                  style={{ aspectRatio: '436/349' }}
+                  onMouseEnter={() => setHoveredId(4)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  <Link to={category === 'Product' ? '/gamblehouse' : '/sumei'} className="block w-full h-full">
+                    <img
+                      src={images[4].src}
+                      alt={images[4].title}
+                      className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                    />
+                  </Link>
+                  {hoveredId === 4 && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
+                    >
+                      <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
+                        {category === 'Product' ? 'Gamble House' : 'Sumei'}
+                      </p>
+                    </motion.div>
+                  )}
+                </motion.div>
+                {category !== 'Food' && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ 
+                      duration: 0.6,
+                      delay: 0.35,
+                      ease: [0.43, 0.13, 0.23, 0.96]
+                    }}
+                    className="relative overflow-hidden cursor-pointer group touch-manipulation"
+                    style={{ aspectRatio: '436/349' }}
+                    onMouseEnter={() => setHoveredId(5)}
+                    onMouseLeave={() => setHoveredId(null)}
+                  >
+                    <Link to={category === 'Product' ? '/ecommerce' : undefined} className="block w-full h-full">
+                      <img
+                        src={images[5].src}
+                        alt={images[5].title}
+                        className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                      />
+                    </Link>
+                    {hoveredId === 5 && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
+                      >
+                        <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
+                          {category === 'Product' ? 'E-commerce' : images[5].title}
+                        </p>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                )}
+                {category === 'Food' && (
+                  <>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9, y: 30 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1164,9 +1159,10 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                         </motion.div>
                       )}
                     </motion.div>
-                  </div>
-                </div>
-              )}
+                  </>
+                )}
+              </div>
+
             </motion.div>
           )}
         </AnimatePresence>
