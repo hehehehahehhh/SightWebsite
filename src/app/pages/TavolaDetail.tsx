@@ -13,6 +13,15 @@ import imgtavola_11 from 'figma:asset/tavola-11.jpg';
 import imgtavola_12 from 'figma:asset/tavola-12.jpg';
 import imgtavola_13 from 'figma:asset/tavola-13.jpg';
 
+import videoTavola01 from 'figma:asset/tavola-video-01.mp4';
+import videoTavola02 from 'figma:asset/tavola-video-02.mp4';
+import videoTavola03 from 'figma:asset/tavola-video-03.mp4';
+import videoTavola04 from 'figma:asset/tavola-video-04.mp4';
+import posterTavola01 from 'figma:asset/tavola-video-poster-01.jpg';
+import posterTavola02 from 'figma:asset/tavola-video-poster-02.jpg';
+import posterTavola03 from 'figma:asset/tavola-video-poster-03.jpg';
+import posterTavola04 from 'figma:asset/tavola-video-poster-04.jpg';
+
 const images = [
   { src: imgtavola_01, alt: 'Tavola 1' },
   { src: imgtavola_02, alt: 'Tavola 2' },
@@ -27,6 +36,10 @@ const images = [
   { src: imgtavola_11, alt: 'Tavola 11' },
   { src: imgtavola_12, alt: 'Tavola 12' },
   { src: imgtavola_13, alt: 'Tavola 13' },
+  { src: videoTavola01, alt: 'Tavola video 1', type: 'video' as const, poster: posterTavola01 },
+  { src: videoTavola02, alt: 'Tavola video 2', type: 'video' as const, poster: posterTavola02 },
+  { src: videoTavola03, alt: 'Tavola video 3', type: 'video' as const, poster: posterTavola03 },
+  { src: videoTavola04, alt: 'Tavola video 4', type: 'video' as const, poster: posterTavola04 },
 ];
 
 export default function TavolaDetail() {

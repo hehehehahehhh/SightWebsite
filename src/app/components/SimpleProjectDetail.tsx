@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 interface SimpleProjectDetailProps {
   title: string;
   category: string; // e.g. 'Fashion' | 'Exhibition' | 'Product' | 'Food'
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; type?: 'image' | 'video'; poster?: string }[];
 }
 
 export default function SimpleProjectDetail({ title, category, images }: SimpleProjectDetailProps) {
@@ -77,9 +77,16 @@ export default function SimpleProjectDetail({ title, category, images }: SimpleP
                 <img
                   alt={image.alt}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  src={image.src}
+                  src={image.type === 'video' ? (image.poster || image.src) : image.src}
                   loading="lazy"
                 />
+                {image.type === 'video' && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="size-[56px] md:size-[64px] rounded-full bg-[rgba(0,0,0,0.45)] backdrop-blur-[4px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <div className="w-0 h-0 ml-[4px] border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white" />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -124,11 +131,22 @@ export default function SimpleProjectDetail({ title, category, images }: SimpleP
               className="relative z-[65] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={images[selectedImageIndex].src}
-                alt={images[selectedImageIndex].alt}
-                className="max-w-[90vw] max-h-[80vh] w-auto h-auto"
-              />
+              {images[selectedImageIndex].type === 'video' ? (
+                <video
+                  src={images[selectedImageIndex].src}
+                  poster={images[selectedImageIndex].poster}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-w-[90vw] max-h-[80vh] w-auto h-auto"
+                />
+              ) : (
+                <img
+                  src={images[selectedImageIndex].src}
+                  alt={images[selectedImageIndex].alt}
+                  className="max-w-[90vw] max-h-[80vh] w-auto h-auto"
+                />
+              )}
             </motion.div>
 
             <button
