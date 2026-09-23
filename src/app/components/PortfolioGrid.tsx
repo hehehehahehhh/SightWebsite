@@ -873,10 +873,10 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                       onMouseEnter={() => setHoveredId(16)}
                       onMouseLeave={() => setHoveredId(null)}
                     >
-                      <Link to="/tavola" className="block w-full h-full">
+                      <Link to="/rien" className="block w-full h-full">
                         <img
-                          src={imgTavola1}
-                          alt="Tavola"
+                          src={imgRien1}
+                          alt="RIEN"
                           className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
                         />
                       </Link>
@@ -888,7 +888,7 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                           className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
                         >
                           <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                            Tavola
+                            RIEN
                           </p>
                         </motion.div>
                       )}
@@ -1139,10 +1139,10 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                       onMouseEnter={() => setHoveredId(15)}
                       onMouseLeave={() => setHoveredId(null)}
                     >
-                      <Link to="/rien" className="block w-full h-full">
+                      <Link to="/tavola" className="block w-full h-full">
                         <img
-                          src={imgRien1}
-                          alt="RIEN"
+                          src={imgTavola1}
+                          alt="Tavola"
                           className="w-full h-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
                         />
                       </Link>
@@ -1154,7 +1154,7 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                           className="hidden md:flex absolute inset-0 bg-black/50 items-center justify-center pointer-events-none"
                         >
                           <p className="text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[32px] md:text-[34px] px-4 text-center leading-tight tracking-[-1%]">
-                            RIEN
+                            Tavola
                           </p>
                         </motion.div>
                       )}
