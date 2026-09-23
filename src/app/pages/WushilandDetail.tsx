@@ -24,6 +24,29 @@ import { imgThreeCats, imgSumei } from "../constants/navigationImages";
 import image_62e5dc0d7c37fb6a0fc3fc8cb6d1f87f942e6d0f from "figma:asset/62e5dc0d7c37fb6a0fc3fc8cb6d1f87f942e6d0f.jpg";
 import image_a3f57ac9742f08861946ced9a009732a31f7dd7e from "figma:asset/a3f57ac9742f08861946ced9a009732a31f7dd7e.jpg";
 
+// Newly added photos
+import imgWushilandNew01 from "figma:asset/wushiland-new-01.jpg";
+import imgWushilandNew02 from "figma:asset/wushiland-new-02.jpg";
+import imgWushilandNew03 from "figma:asset/wushiland-new-03.jpg";
+import imgWushilandNew04 from "figma:asset/wushiland-new-04.jpg";
+import imgWushilandNew05 from "figma:asset/wushiland-new-05.jpg";
+import imgWushilandNew06 from "figma:asset/wushiland-new-06.jpg";
+import imgWushilandNew07 from "figma:asset/wushiland-new-07.jpg";
+import imgWushilandNew08 from "figma:asset/wushiland-new-08.jpg";
+import imgWushilandNew09 from "figma:asset/wushiland-new-09.jpg";
+import imgWushilandNew10 from "figma:asset/wushiland-new-10.jpg";
+import imgWushilandNew11 from "figma:asset/wushiland-new-11.jpg";
+import imgWushilandNew12 from "figma:asset/wushiland-new-12.jpg";
+import imgWushilandNew13 from "figma:asset/wushiland-new-13.jpg";
+import imgWushilandNew14 from "figma:asset/wushiland-new-14.jpg";
+import imgWushilandNew15 from "figma:asset/wushiland-new-15.jpg";
+import imgWushilandNew16 from "figma:asset/wushiland-new-16.jpg";
+import imgWushilandNew17 from "figma:asset/wushiland-new-17.jpg";
+import imgWushilandNew18 from "figma:asset/wushiland-new-18.jpg";
+import imgWushilandNew19 from "figma:asset/wushiland-new-19.jpg";
+import imgWushilandNew20 from "figma:asset/wushiland-new-20.jpg";
+import imgWushilandNew21 from "figma:asset/wushiland-new-21.jpg";
+
 const images = [
   { src: imgWushiland2, alt: "Wushiland 1" },
   { src: img114, alt: "Wushiland 2" },
@@ -33,6 +56,27 @@ const images = [
   { src: img517, alt: "Wushiland 6" },
   { src: img616, alt: "Wushiland 7" },
   { src: img714, alt: "Wushiland 8" },
+  { src: imgWushilandNew01, alt: "Wushiland 9" },
+  { src: imgWushilandNew02, alt: "Wushiland 10" },
+  { src: imgWushilandNew03, alt: "Wushiland 11" },
+  { src: imgWushilandNew04, alt: "Wushiland 12" },
+  { src: imgWushilandNew05, alt: "Wushiland 13" },
+  { src: imgWushilandNew06, alt: "Wushiland 14" },
+  { src: imgWushilandNew07, alt: "Wushiland 15" },
+  { src: imgWushilandNew08, alt: "Wushiland 16" },
+  { src: imgWushilandNew09, alt: "Wushiland 17" },
+  { src: imgWushilandNew10, alt: "Wushiland 18" },
+  { src: imgWushilandNew11, alt: "Wushiland 19" },
+  { src: imgWushilandNew12, alt: "Wushiland 20" },
+  { src: imgWushilandNew13, alt: "Wushiland 21" },
+  { src: imgWushilandNew14, alt: "Wushiland 22" },
+  { src: imgWushilandNew15, alt: "Wushiland 23" },
+  { src: imgWushilandNew16, alt: "Wushiland 24" },
+  { src: imgWushilandNew17, alt: "Wushiland 25" },
+  { src: imgWushilandNew18, alt: "Wushiland 26" },
+  { src: imgWushilandNew19, alt: "Wushiland 27" },
+  { src: imgWushilandNew20, alt: "Wushiland 28" },
+  { src: imgWushilandNew21, alt: "Wushiland 29" },
 ];
 
 export default function WushilandDetail() {
@@ -272,6 +316,25 @@ export default function WushilandDetail() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Additional Photos - Desktop */}
+        <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
+          {images.slice(8).map((image, i) => (
+            <div
+              key={i + 8}
+              className="relative overflow-hidden cursor-pointer group"
+              style={{ aspectRatio: '4/5' }}
+              onClick={() => setSelectedImageIndex(i + 8)}
+            >
+              <img
+                alt={image.alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={image.src}
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Spacing after grid */}

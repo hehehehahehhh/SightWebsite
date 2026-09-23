@@ -29,6 +29,13 @@ import TwoGirlsOneTweezerDetail from "./pages/TwoGirlsOneTweezerDetail";
 import UncoloredHoouseDetail from "./pages/UncoloredHoouseDetail";
 import RehearsingSpaceDetail from "./pages/RehearsingSpaceDetail";
 import OutToPastureDetail from "./pages/OutToPastureDetail";
+import PrinceOfPeaceDetail from "./pages/PrinceOfPeaceDetail";
+import EllyAmaiDetail from "./pages/EllyAmaiDetail";
+import AllAboutGingerDetail from "./pages/AllAboutGingerDetail";
+import LAPreferidaDetail from "./pages/LAPreferidaDetail";
+import PicamasDetail from "./pages/PicamasDetail";
+import RienDetail from "./pages/RienDetail";
+import TavolaDetail from "./pages/TavolaDetail";
 import RootLayout from "./components/RootLayout";
 
 export const router = createHashRouter([
@@ -155,6 +162,34 @@ export const router = createHashRouter([
       {
         path: "outtopasture",
         Component: OutToPastureDetail,
+      },
+      {
+        path: "princeofpeace",
+        Component: PrinceOfPeaceDetail,
+      },
+      {
+        path: "ellyamai",
+        Component: EllyAmaiDetail,
+      },
+      {
+        path: "allaboutginger",
+        Component: AllAboutGingerDetail,
+      },
+      {
+        path: "lapreferida",
+        Component: LAPreferidaDetail,
+      },
+      {
+        path: "picamas",
+        Component: PicamasDetail,
+      },
+      {
+        path: "rien",
+        Component: RienDetail,
+      },
+      {
+        path: "tavola",
+        Component: TavolaDetail,
       },
     ],
   },

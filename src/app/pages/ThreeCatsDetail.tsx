@@ -21,6 +21,9 @@ import svgPathsLeftArrow from "../../imports/svg-duxboigvnv";
 // Navigation images
 import { imgYukiKumo, imgWushiland } from "../constants/navigationImages";
 
+// Newly added photos
+import imgThreeCatsNew01 from "figma:asset/threecats-new-01.jpg";
+
 const images = [
   { src: imgThreeCats2, alt: "Three Cats 1" },
   { src: img22236, alt: "Three Cats 2" },
@@ -33,6 +36,7 @@ const images = [
   { src: img96, alt: "Three Cats 9" },
   { src: img106, alt: "Three Cats 10" },
   { src: img114, alt: "Three Cats 11" },
+  { src: imgThreeCatsNew01, alt: "Three Cats 12" },
 ];
 
 export default function ThreeCatsDetail() {
@@ -426,6 +430,25 @@ export default function ThreeCatsDetail() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Additional Photos - Desktop */}
+        <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
+          {images.slice(11).map((image, i) => (
+            <div
+              key={i + 11}
+              className="relative overflow-hidden cursor-pointer group"
+              style={{ aspectRatio: '4/5' }}
+              onClick={() => setSelectedImageIndex(i + 11)}
+            >
+              <img
+                alt={image.alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={image.src}
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Spacing after grid */}
