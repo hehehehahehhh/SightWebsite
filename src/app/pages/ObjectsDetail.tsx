@@ -229,23 +229,35 @@ export default function ObjectsDetail() {
         </div>
 
         {/* Additional Photos - Desktop */}
-        <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
-          {images.slice(6).map((image, i) => (
-            <div
-              key={i + 6}
-              className="relative overflow-hidden cursor-pointer group"
-              style={{ aspectRatio: '4/5' }}
-              onClick={() => setSelectedImageIndex(i + 6)}
-            >
-              <img
-                alt={image.alt}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                src={image.src}
-                loading="lazy"
-              />
+        {(() => {
+          const extra = images.slice(6).map((image, i) => ({ image, idx: 6 + i }));
+          const col0 = extra.filter((_, i) => i % 3 === 0);
+          const col1 = extra.filter((_, i) => i % 3 === 1);
+          const col2 = extra.filter((_, i) => i % 3 === 2);
+          const renderCol = (col: typeof extra, aspect: string) =>
+            col.map(({ image, idx }) => (
+              <div
+                key={idx}
+                className="relative overflow-hidden cursor-pointer group"
+                style={{ aspectRatio: aspect }}
+                onClick={() => setSelectedImageIndex(idx)}
+              >
+                <img
+                  alt={image.alt}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src={image.src}
+                  loading="lazy"
+                />
+              </div>
+            ));
+          return (
+            <div className="hidden md:flex gap-4 mt-8">
+              <div className="flex-1 flex flex-col gap-4">{renderCol(col0, '437/349')}</div>
+              <div className="flex-1 flex flex-col gap-4">{renderCol(col1, '336/472')}</div>
+              <div className="flex-1 flex flex-col gap-4">{renderCol(col2, '437/349')}</div>
             </div>
-          ))}
-        </div>
+          );
+        })()}
 
         {/* Our Clients Section */}
         <div className="w-full mt-8 md:mt-12 relative h-[156px]\"> {/* Fixed height to match Figma */}
